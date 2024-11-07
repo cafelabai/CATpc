@@ -1,6 +1,6 @@
 # from huggingface_hub import login
 
-# login(token="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")
+# login(token="LLAMA3_API_TOKEN")
 
 import gradio as gr
 import psycopg2

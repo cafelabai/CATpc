@@ -1,6 +1,16 @@
-@software{Jadhav_Catpc_2024,
-  author = {Jadhav, Kshitija Suresh and Chauhan, Ankit Singh and Chakraborty, Sunandan and Price, Jeremy F},
-  title = {{CATpc}},
-  year = {2024},
-  url = {https://github.com/cafelabai/CATpc}
-}
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Jadhav"
+  given-names: "Kshitija Suresh"
+- family-names: "Chauhan"
+  given-names: "Ankit Singh"
+- family-names: "Chakraborty"
+  given-names: "Sunandan"
+  orcid: "https://orcid.org/0000-0002-3331-6082"
+- family-names: "Price"
+  given-names: "Jeremy F"
+  orcid: "https://orcid.org/0000-0002-6506-3526"
+title: "CATpc"
+date-released: 2024-11-07
+url: "https://github.com/cafelabai/CATpc"

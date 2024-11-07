@@ -1,0 +1,16 @@
+llama-index-vector-stores-postgres
+python-docx
+langchain
+transformers
+huggingface_hub
+psycopg2-binary
+pgvector
+SQLAlchemy
+langchain_postgres
+langchain-community
+sentence-transformers
+langchain_huggingface
+sqlalchemy
+llama-index
+psycopg2
+bitsandbytes

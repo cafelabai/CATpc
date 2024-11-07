@@ -1,0 +1,20 @@
+from huggingface_hub import login
+
+login(token="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")
+
+from transformers import AutoModelForCausalLM, AutoTokenizer
+import torch
+
+
+model_name =  "meta-llama/Meta-Llama-3-8B"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForCausalLM.from_pretrained(model_name)
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model.to(device)
+
+prompt = "What is the significance of the LLaMA model?"
+inputs = tokenizer(prompt, return_tensors="pt").to(device)
+outputs = model.generate(**inputs)
+response = tokenizer.decode(outputs[0], skip_special_tokens=True)
+print(response)

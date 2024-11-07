@@ -1,0 +1,41 @@
+import subprocess
+import os
+
+def generate_text_with_llama3(prompt):
+    try:
+        os.environ["OLLAMA_HOST"] = "127.0.0.1:5050"
+        
+        process = subprocess.Popen(
+            ["ollama", "run", "llama3:latest"],
+            stdin=subprocess.PIPE,  
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE
+        )
+        
+        stdout, stderr = process.communicate(input=prompt.encode(), timeout=160) 
+
+        if stderr:
+            print(f"Error Output: {stderr.decode()}")
+
+        if process.returncode != 0:
+            print(f"Error: {stderr.decode()}")
+            return None
+
+        return stdout.decode().strip()
+
+    except subprocess.TimeoutExpired:
+        print("The request timed out.")
+        return None
+
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+        return None
+
+if __name__ == "__main__":
+    prompt = "What is the significance of the LLaMA model?"
+    response = generate_text_with_llama3(prompt)
+    if response:
+        print("LLaMA3 Response:")
+        print(response)
+    else:
+        print("No response received.")
